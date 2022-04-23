@@ -6,24 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+
     <script
       src="https://kit.fontawesome.com/3891d39226.js"
       crossorigin="anonymous"
     ></script>
+
     <title>Tbrunch</title>
   </head>
 
   <body>
     <!-- 頁首選單 -->
+    <a href="#" class="top">
+      <i class="fa-solid fa-caret-up"></i>
+    </a>
     <div id="header">
       <input type="checkbox" id="burgershow" style="display: none" />
       <ul class="header-menu">
         <li>
-          <a href="index.html"><img src="imgs/LOGO.jpg" alt="" /></a>
+          <a href="index.html"><img src="imgs/LOGO.svg" alt="" /></a>
         </li>
-        <li><a href="index.html">首頁</a></li>
+        <li><a href="#">首頁</a></li>
         <li><a href="#product">產品介紹</a></li>
         <li><a href="#about">關於我們</a></li>
+        <li><a href="#new_product">最新產品</a></li>
         <li><a href="#sub">訂閱我們</a></li>
       </ul>
       <label for="burgershow" class="burger-menu">
@@ -33,7 +39,7 @@
     </div>
 
     <div class="main">
-      <div class="main-one">
+      <div class="main-one" id="top">
         <div class="main-one-content">
           <div class="main-one-title">
             <h1>New</h1>
@@ -46,7 +52,7 @@
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis,
             laborum laboriosam,
           </div>
-          <a href="">SHOP NOW</a>
+          <a href="">進入</a>
         </div>
         <div class="main-one-img">
           <div class="img">
@@ -58,34 +64,34 @@
       <div class="main-two container">
         <h1 id="product">產品簡介</h1>
         <div class="row" style="margin-top: 25px">
-          <div class="col-12 col-md-6 col-lg-3">
+          <div class="col-12 col-md-6 col-lg-3 product_mb">
             <div class="img">
-              <img src="https://picsum.photos/300/350/?random=10" />
+              <img src="imgs/food5_1024768.jpg" />
               <div class="paper">burnch</div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-3">
+          <div class="col-12 col-md-6 col-lg-3 product_mb">
             <div class="img">
-              <img src="https://picsum.photos/300/350/?random=10" />
+              <img src="imgs/food2_1024768.jpg" />
               <div class="paper">burnch</div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-3">
+          <div class="col-12 col-md-6 col-lg-3 product_mb">
             <div class="img">
-              <img src="https://picsum.photos/300/350/?random=10" />
+              <img src="imgs/food3_1024768.jpg" />
               <div class="paper">burnch</div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-3">
+          <div class="col-12 col-md-6 col-lg-3 product_mb">
             <div class="img">
-              <img src="https://picsum.photos/300/350/?random=10" />
+              <img src="imgs/food4_1024768.jpg" />
               <div class="paper">burnch</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="main-three" id="about">
+      <div class="main-three">
         <div class="main-three-img">
           <picture>
             <source media="(min-width:1190px)" srcset="imgs/breakfast_1x.jpg" />
@@ -95,18 +101,18 @@
         </div>
         <div class="main-three-content">
           <div class="main-three-title">
-            <h1>New</h1>
+            <h1 id="about">關於我們</h1>
             <div class="title-content">
               PRING / SUMMER <br />
               COLLECTION
             </div>
           </div>
-          <a href="">SHOP NOW</a>
+          <a href="">進入</a>
         </div>
       </div>
 
       <div class="main-four">
-        <h1>產品簡介</h1>
+        <h1 id="new_product">最新產品</h1>
         <div class="main-four-content">
           <div class="content-left">
             <div class="content-img">
@@ -124,7 +130,7 @@
           </div>
           <div class="content-right">
             <div class="content-img">
-              <img src="imgs/salad-sandwich.jpg" alt="" />
+              <img src="imgs/hamburger-gffb164b1b_1920.jpg" alt="" />
             </div>
             <div class="content">
               <h4>產品標題</h4>
@@ -226,64 +232,76 @@
       <div class="copyright">
         <span
           >服務時間 星期一至五 上午 10 點至晚上 7 點 | @copyright 2022-03 Taiwan
-          Brunchaaaaa</span
+          Brunch</span
         >
       </div>
     </div>
-  </body>
 
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"
-    integrity="sha512-DUC8yqWf7ez3JD1jszxCWSVB0DMP78eOyBpMa5aJki1bIRARykviOuImIczkxlj1KhVSyS16w2FSQetkD4UU2w=="
-    crossorigin="anonymous"
-  ></script>
-
-  <script>
-    let ele = [
-      {
-        h3: document.querySelector(".shopline h3"),
-        ul: document.querySelector(".shopline ul"),
-      },
-      {
-        h3: document.querySelector(".social h3"),
-        ul: document.querySelector(".social ul"),
-      },
-      {
-        h3: document.querySelector(".source h3"),
-        ul: document.querySelector(".source ul"),
-      },
-    ];
-    let burgerMenu = document.querySelector(".burger-menu");
-    let burger = document.querySelector(".burger");
-
-    ele.forEach((item) => {
-      item.h3.addEventListener("click", () => {
-        if (item.ul.classList.contains("hidden")) {
-          item.ul.classList.remove("hidden");
-          item.ul.classList.add("slide");
-        } else {
-          item.ul.classList.remove("slide");
-          item.ul.classList.add("hidden");
-        }
+    <script>
+      let ele = [
+        {
+          h3: document.querySelector(".shopline h3"),
+          ul: document.querySelector(".shopline ul"),
+        },
+        {
+          h3: document.querySelector(".social h3"),
+          ul: document.querySelector(".social ul"),
+        },
+        {
+          h3: document.querySelector(".source h3"),
+          ul: document.querySelector(".source ul"),
+        },
+      ];
+      let burgerMenu = document.querySelector(".burger-menu");
+      let burger = document.querySelector(".burger");
+      let header = document.querySelector("#header");
+      let Top = document.querySelector(".top");
+      ele.forEach((item) => {
+        item.h3.addEventListener("click", () => {
+          if (item.ul.classList.contains("hidden")) {
+            item.ul.classList.remove("hidden");
+            item.ul.classList.add("slide");
+          } else {
+            item.ul.classList.remove("slide");
+            item.ul.classList.add("hidden");
+          }
+        });
       });
-    });
 
-    burgerMenu.addEventListener("click", function () {
-      let rwdMenu = document.querySelector(".down-menu");
-      rwdMenu.innerHTML =
-        '<li><a href="index.html">首頁</a></li><li><a href="#product">產品介紹</a></li><li><a href="#about">關於我們</a></li><li><a href="#sub">訂閱我們</a></li>';
-      slideDown(rwdMenu);
-    });
+      burgerMenu.addEventListener("click", function () {
+        let rwdMenu = document.querySelector(".down-menu");
+        slideDown(rwdMenu);
+        rwdMenu.innerHTML =
+          '<li><a href="index.html">首頁</a></li><li><a href="#product">產品介紹</a></li><li><a href="#about">關於我們</a></li><li><a href="#new_product">最新產品</a></li><li><a href="#sub">訂閱我們</a></li>';
+      });
 
-    function slideDown(rwdMenu) {
-      if (rwdMenu.classList.contains("hidden")) {
-        rwdMenu.classList.remove("hidden");
-        rwdMenu.classList.add("slide");
-      } else {
-        rwdMenu.classList.remove("slide");
-        rwdMenu.classList.add("hidden");
+      window.addEventListener("scroll", scrollShadow);
+      window.addEventListener("scroll", anchorTop);
+
+      function slideDown(rwdMenu) {
+        if (rwdMenu.classList.contains("hidden")) {
+          rwdMenu.classList.remove("hidden");
+          rwdMenu.classList.add("slide");
+        } else {
+          rwdMenu.classList.remove("slide");
+          rwdMenu.classList.add("hidden");
+        }
       }
-      return rwdMenu;
-    }
-  </script>
+
+      function scrollShadow() {
+        if (window.scrollY > 0) {
+          header.classList.add("shadow");
+        } else {
+          header.classList.remove("shadow");
+        }
+      }
+      function anchorTop() {
+        let ShowHide =
+          window.scrollY > 0
+            ? (Top.style = "opacity:1")
+            : (Top.style = "opacity:0");
+        return ShowHide;
+      }
+    </script>
+  </body>
 </html>
